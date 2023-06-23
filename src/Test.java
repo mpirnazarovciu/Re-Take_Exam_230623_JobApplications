@@ -6,7 +6,6 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.*;
 
-import javax.swing.JOptionPane;
 public class Test {
 	public static void main(String[] args) throws ApplicationException {
 		HandleApplications ha = new HandleApplications();
@@ -78,47 +77,5 @@ public class Test {
 		String maxPosition = ha.maxPosition();
 		System.out.println(maxPosition); //gui designer junior
 	}
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    /**
-     * This function serves the only purpose of checking whether
-     * your entered the required personal information.
-     */
-    private static void loadStudentInfo() {
-        Properties p = new Properties();
-        try{
-            p.load(new FileInputStream("Student.txt"));
-        }catch(IOException e){
-            System.err.println("Could not open the file Student.txt");
-            System.err.flush();
-            JOptionPane.showMessageDialog(null, "Missing student information!\n\nPlease fill in the Student.txt file before submitting the final version.",
-                    "Error",JOptionPane.ERROR_MESSAGE);
-        }
-        if( p.getProperty("ID","").equals("")){
-            System.err.println("Missing student information. Please fill in the Student.txt file");
-            System.err.flush();
-            JOptionPane.showMessageDialog(null, "Missing student information!\n\nPlease fill in the Student.txt file before submitting the final version.",
-                                            "Error",JOptionPane.ERROR_MESSAGE);
-        }else{
-            System.out.println("Project by " + p.getProperty("FirstName") + " " 
-                                             + p.getProperty("LastName") 
-                                             + " (" + p.getProperty("ID") + ")");
-            System.out.flush();
-        }
-    }
-    static{
-        loadStudentInfo(); // this is to remember you to fill in the Student.txt file
-    }
 }
 

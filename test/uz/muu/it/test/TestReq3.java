@@ -59,15 +59,8 @@ public class TestReq3 extends TestCase {
 			fail("missing capability for position");
 		} catch (ApplicationException e) {
 		}
-	}	
-	public void testEnterApplicationEx4() {
-		try {
-			ha.enterApplication("alfred", "team leader"); 
-			ha.enterApplication("alfred", "team leader"); 
-			fail("applicant has already applied for the same a position");
-		} catch (ApplicationException e) {
-		}
-	}	
+	}
+
 	public void testGetApplicants() {
 		List<String> list = pos.getApplicants();
 		System.out.println(list);

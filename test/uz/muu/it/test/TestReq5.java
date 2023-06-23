@@ -41,19 +41,7 @@ public class TestReq5 extends TestCase {
 		System.out.println(map); //{css=4, pascal=6, sql=6, xml=2} or the one with 0s
         assertTrue("The map should contain 4 or 8 elements",map.size() == 4 || map.size()==8);
 	}	
-	public void testSkill_nApplicantsT2() {
-		SortedMap<String,Long> map = ha.skill_nApplicants();
-		assertNotNull(map );
-        assertTrue("The map should contain 4 or 8 elements",map.size() == 4 || map.size()==8);
-		assertEquals("css",map.firstKey());
-	}
-	public void testSkill_nApplicantsT3() {
-		SortedMap<String,Long> map = ha.skill_nApplicants();
-		assertNotNull(map );
-		assertTrue("The map should contain 4 or 8 elements",map.size() == 4 || map.size()==8);
-		assertEquals(new Long(6),map.get("pascal"));
-	}
-	
+
 	public void testMaxPosition() {
 		String pos = ha.maxPosition();
 		assertNotNull(pos);

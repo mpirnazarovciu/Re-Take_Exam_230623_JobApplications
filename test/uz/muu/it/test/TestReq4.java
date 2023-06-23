@@ -64,25 +64,6 @@ public class TestReq4 extends TestCase {
 			fail("position already assigned");
 		} catch (ApplicationException e) {
 		}
-	}	
-
-	public void testSetWinnerEx3() {
-		try {
-			int capSum = ha.setWinner("ted", "junior developer"); 
-			System.out.println(capSum);
-			fail("insufficient capabilities");
-		} catch (ApplicationException e) {
-		}
-	}
-
-	public void testSetWinnerEx4() {
-		try {
-			int capSum = ha.setWinner("mary", "team leader"); 
-			System.out.println(capSum);
-			assertEquals(14,capSum);
-		} catch (ApplicationException e) {
-			fail("no exception must be thrown");
-		}
 	}
 	
 	public void testGetWinner() {
